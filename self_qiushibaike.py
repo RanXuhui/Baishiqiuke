@@ -22,9 +22,9 @@ def parsePage(lst, html, fpath):
         contentInfo = num[i]
         valList = contentInfo.find('span')
         val = valList.text
-        val.replace("\n", "")
+        val = val.replace("\n", "")
         key = keyList[i].text
-        key.replace("\n", "")
+        key = key.replace("\n", "")
         lst[key] = val
 
     with open(fpath, 'a', encoding='utf-8') as f:
