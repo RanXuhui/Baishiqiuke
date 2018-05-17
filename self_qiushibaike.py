@@ -31,6 +31,12 @@ def parsePage(lst, html, fpath):
         f.write(str(lst) + '\n')
 
 
+def printInfo(lst):
+    i = 1
+    for key in lst.keys():
+        print("用户" + str(i) + "：" + key + '\n', "留言： " + lst[key] + '\n')
+        i += 1
+
 
 def main():
     # depth = 2
@@ -44,6 +50,7 @@ def main():
             url = start_url + '/8hr/page/' + str(i)       # 这里的i一定要是str！！！！
             html = getHTMLText(url)
             parsePage(infoList, html, fpath)
+            printInfo(infoList)
         except:
             continue
 
