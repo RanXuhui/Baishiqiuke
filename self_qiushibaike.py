@@ -42,7 +42,7 @@ def main():
     # depth = 2
     start_url = 'https://www.qiushibaike.com'
     infoList = {}
-    fpath = 'F:/1.txt'
+    fpath = 'F:/Crawler/精通python的网络爬虫/第六章/糗事百科/qiushi.txt'
     html = getHTMLText(start_url)
     parsePage(infoList, html, fpath)
     for i in range(2, 4):
