@@ -34,17 +34,17 @@ def parsePage(lst, html, fpath):
 
 def main():
     # depth = 2
-    url = 'https://www.qiushibaike.com'
+    start_url = 'https://www.qiushibaike.com'
     infoList = {}
-    fpath = 'F:/qiushibaike.txt'
-    html = getHTMLText(url)
+    fpath = 'F:/1.txt'
+    html = getHTMLText(start_url)
     parsePage(infoList, html, fpath)
-    # for i in range(2, depth+2):
-    #     try:
-    #         url = start_url + '/8hr/page/' + i + '/'
-    #         html = getHTMLText(url)
-    #         parsePage(infoList, html, fpath)
-    #     except:
-    #         continue
+    for i in range(2, 4):
+        try:
+            url = start_url + '/8hr/page/' + str(i)       # 这里的i一定要是str！！！！
+            html = getHTMLText(url)
+            parsePage(infoList, html, fpath)
+        except:
+            continue
 
 main()
